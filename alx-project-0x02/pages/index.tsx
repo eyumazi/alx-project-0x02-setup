@@ -1,44 +1,32 @@
-import PostCard from "@/components/PostCard";
-import Header from "@/components/layout/Header";
-import type { PostProps } from "@/interfaces";
-
-const Posts: React.FC<PostProps[]> = ({ posts }) => {
-  console.log(posts);
+import Card from "@/components/layout/Card";
+import "../styles/globals.css";
+import Button from "@/components/layout/Button";
+export default function Home() {
   return (
-    <div className="flex flex-col h-screen">
-      <Header />
-      <main className="p-4">
-        <div className="flex justify-between">
-          <h1 className=" text-2xl font-semibold">Post Content</h1>
-          <button className="bg-blue-700 px-4 py-2 rounded-full text-white">
-            Add Post
-          </button>
-        </div>
-        <div className="grid grid-cols-3 gap-2 ">
-          {posts?.map(({ title, body, userId, id }: PostProps, key: number) => (
-            <PostCard
-              title={title}
-              body={body}
-              userId={userId}
-              id={id}
-              key={key}
-            />
-          ))}
-        </div>
-      </main>
+    <div>
+      <br />
+      <Card
+        title="Beautiful Apartment"
+        location="New York, NY"
+        price="$120/n"
+        rating={4.5}
+        reviews={["Top Villa", "Self Checkin", "Free Reschedule"]}
+        imageUrl="/assets/listing images/List 1.svg"
+        iconsUrl={[
+          "/assets/Icons/bed 1.svg",
+          "/assets/Icons/bathtub 1.svg",
+          "/assets/Icons/people 1.svg",
+        ]}
+      />
+      <div className="mt-10"></div>
+      <Button
+        label="Click me"
+        onClick={() => {
+          alert("You clicked a button");
+        }}
+        type="button"
+        className="Test-btn"
+      />
     </div>
   );
-};
-
-export async function getStaticProps() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await response.json();
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }
-
-export default Posts;

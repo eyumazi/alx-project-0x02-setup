@@ -1,69 +1,36 @@
-export interface PostProps {
-  userId: number;
-  id: number;
+export interface CardProps {
   title: string;
-  body: string;
+  location: string;
+  price: string;
+  rating: number;
+  reviews: string[];
+  imageUrl: string;
+  iconsUrl: string[];
 }
-export interface UserProps {
-  id: number;
+
+export interface ButtonProps {
+  label: string;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  className?: string;
+}
+
+export interface PropertyProps {
   name: string;
-  username: string;
-  email: string;
   address: {
-    street: string;
-    suite: string;
+    state: string;
     city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
+    country: string;
   };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
+  rating: number;
+  category: string[];
+  price: number;
+  offers: {
+    bed: string;
+    shower: string;
+    occupants: string;
   };
-}
-export interface PostData {
-  userId: number;
-  id?: number;
-  title: string;
-  body: string;
+  image: string;
+  discount: string;
 }
 
-export interface PostModalProps {
-  onClose: () => void;
-  onSubmit: (post: UserProps) => void;
-}
-
-export interface UserData {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
-
-export interface UserModalProps {
-  onClose: () => void;
-  onSubmit: (user: UserData) => void;
-}
