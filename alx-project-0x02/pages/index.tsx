@@ -1,4 +1,4 @@
-import Card from "@/components/layout/Card";
+import Card from "@/components/common/Card";
 import "../styles/globals.css";
 import Button from "@/components/layout/Button";
 export default function Home() {
