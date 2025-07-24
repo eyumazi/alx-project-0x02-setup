@@ -3,7 +3,7 @@ export interface CardProps {
   location: string;
   price: string;
   rating: number;
-  reviews: string[];
+  content: string[];
   imageUrl: string;
   iconsUrl: string[];
 }

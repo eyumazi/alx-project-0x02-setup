@@ -6,7 +6,7 @@ const Card: React.FC<CardProps> = ({
   location,
   price,
   rating,
-  reviews,
+  content,
   imageUrl,
   iconsUrl,
 }) => {
@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
       </div>
 
       <div className="reviews-container flex gap-2 mb-4">
-        {reviews.map((review) => (
+        {content.map((review) => (
           <div
             key={review}
             className="flex bg-gray-50 px-3 py-1 rounded-full items-center"
