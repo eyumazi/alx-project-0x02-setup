@@ -1,11 +1,15 @@
-export interface CardProps {
-  title: string;
+export interface CardContent {
   location: string;
   price: string;
   rating: number;
-  content: string[];
+  reviews: string[];
   imageUrl: string;
   iconsUrl: string[];
+}
+
+export interface CardProps {
+  title: string;
+  contents: CardContent[];
 }
 
 export interface ButtonProps {
@@ -33,4 +37,3 @@ export interface PropertyProps {
   image: string;
   discount: string;
 }
-
