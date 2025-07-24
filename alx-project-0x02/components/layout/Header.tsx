@@ -6,7 +6,7 @@ import Button from "@/components/layout/Button";
 import search from "@/public/assets/Icons/Search.svg";
 import { FiltererContainer } from "../Filterer";
 import React, { useState } from "react";
-
+import Link from "next/link";
 const Header = () => {
   const [showOptions, setShowOptions] = useState(false);
   return (
@@ -30,6 +30,20 @@ const Header = () => {
             <button className="text-sm font-medium text-white bg-black rounded-2xl px-3 py-1 mt-2 sm:mt-0">
               Move info
             </button>
+            <div className="flex flex-row items-center justify-center sm:justify-end gap-4 mt-2 sm:mt-0">
+              <Link
+              href="/home"
+              className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+              >
+              Home
+              </Link>
+              <Link
+              href="/about"
+              className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+              >
+              About
+              </Link>
+            </div>
           </div>
 
           {/* Mobile expand button */}
