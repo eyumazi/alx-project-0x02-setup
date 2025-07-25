@@ -7,6 +7,7 @@ const Button: React.FC<ButtonProps> = ({
   type = "button",
   className = "",
   size = "medium",
+  shape = "rounded-md",
 }) => {
   return (
     <div className="inline-block">
