@@ -3,12 +3,23 @@ import caseminimal from "@/public/assets/Icons/Linear/School/Case Minimalistic.s
 import Image from "next/image";
 import ALXlogo from "@/public/assets/Logos/ALXlogo.svg";
 import Button from "@/components/layout/Button";
+import { useState } from "react";
+import { PostModal } from "@/components/common/PostModal";
+import Card from "@/components/common/Card";
+import type { CardProps } from "@/interfaces";
 import search from "@/public/assets/Icons/Search.svg";
 import { FiltererContainer } from "../Filterer";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 const Header = () => {
   const [showOptions, setShowOptions] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState<CardProps[]>([]);
+
+  const handleAddPost = (card: CardProps) => {
+    setPosts((prev) => [...prev, card]);
+  };
+
   return (
     <>
       <header className="flex flex-col bg-white shadow-md">
@@ -32,16 +43,16 @@ const Header = () => {
             </button>
             <div className="flex flex-row items-center justify-center sm:justify-end gap-4 mt-2 sm:mt-0">
               <Link
-              href="/home"
-              className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+                href="/home"
+                className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
               >
-              Home
+                Home
               </Link>
               <Link
-              href="/about"
-              className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+                href="/about"
+                className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
               >
-              About
+                About
               </Link>
             </div>
           </div>
@@ -143,11 +154,36 @@ const Header = () => {
                 onClick={() => {}}
                 className="sign-in btn"
               />
+              <Button
+                label="Add element"
+                onClick={() => setIsModalOpen(true)}
+                className="sign-in btn"
+              />
             </div>
           </div>
         </div>
         <hr className="opacity-5" />
         <FiltererContainer />
+        {/* Render new posts as cards below header */}
+        <div className="flex flex-wrap gap-6 justify-center mt-8">
+          {posts.map((post, idx) => (
+            <Card
+              key={idx}
+              title={post.title}
+              location={post.location}
+              price={post.price}
+              rating={post.rating}
+              content={post.content}
+              imageUrl={post.imageUrl}
+              iconsUrl={post.iconsUrl}
+            />
+          ))}
+        </div>
+        <PostModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onAddPost={handleAddPost}
+        />
       </header>
     </>
   );
