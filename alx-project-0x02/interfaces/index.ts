@@ -13,6 +13,7 @@ export interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   className?: string;
+  size?: "small" | "medium" | "large";
 }
 
 export interface PropertyProps {

@@ -6,6 +6,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = "button",
   className = "",
+  size = "medium",
 }) => {
   return (
     <div className="inline-block">
