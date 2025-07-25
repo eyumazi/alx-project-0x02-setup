@@ -54,6 +54,12 @@ const Header = () => {
               >
                 About
               </Link>
+              <Link
+                href="/posts"
+                className="text-sm font-medium text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+              >
+                Posts
+              </Link>
             </div>
           </div>
 
