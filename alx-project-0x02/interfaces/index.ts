@@ -33,9 +33,8 @@ export interface PropertyProps {
   image: string;
   discount: string;
 }
-export interface ModalProps
-{
+export interface ModalProps {
   isopen: boolean;
-  onClose: ()=> void;
+  onClose: () => void;
   children: React.ReactNode;
 }

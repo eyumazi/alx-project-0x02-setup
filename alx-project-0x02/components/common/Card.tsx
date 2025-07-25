@@ -83,7 +83,7 @@ const Card: React.FC<CardProps> = ({
           ))}
         </div>
         <div className="price-container font-semibold text-[28px] text-gray-900">
-          {price}
+          {price} {"/n"}
         </div>
       </div>
     </div>

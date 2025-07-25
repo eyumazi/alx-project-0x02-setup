@@ -48,11 +48,22 @@ export const PostModal: React.FC<PostModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (title && location && price && content && rating && imagePreview) {
+    let formattedPrice = price.trim();
+    if (formattedPrice && !formattedPrice.startsWith("$")) {
+      formattedPrice = "$" + formattedPrice;
+    }
+    if (
+      title &&
+      location &&
+      formattedPrice &&
+      content &&
+      rating &&
+      imagePreview
+    ) {
       const newCard: CardProps = {
         title,
         location,
-        price,
+        price: formattedPrice,
         content,
         rating,
         imageUrl: imagePreview,

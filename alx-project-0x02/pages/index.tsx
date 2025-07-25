@@ -8,7 +8,7 @@ export default function Home() {
       <Card
         title="Beautiful Apartment"
         location="New York, NY"
-        price="$120/n"
+        price="$120"
         rating={4.5}
         content={["Top Villa", "Self Checkin", "Free Reschedule"]}
         imageUrl="/assets/listing images/List 1.svg"
