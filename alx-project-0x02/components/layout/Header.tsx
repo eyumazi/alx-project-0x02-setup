@@ -2,7 +2,7 @@
 import caseminimal from "@/public/assets/Icons/Linear/School/Case Minimalistic.svg";
 import Image from "next/image";
 import ALXlogo from "@/public/assets/Logos/ALXlogo.svg";
-import Button from "@/components/layout/Button";
+import Button from "@/components/common/Button";
 import { useState } from "react";
 import { PostModal } from "@/components/common/PostModal";
 import Card from "@/components/common/Card";
