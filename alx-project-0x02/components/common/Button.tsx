@@ -1,5 +1,5 @@
 import React from "react";
-import {type ButtonProps } from "../../interfaces";
+import { type ButtonProps } from "@/interfaces";
 
 const Button: React.FC<ButtonProps> = ({
   label,
@@ -22,9 +22,21 @@ const Button: React.FC<ButtonProps> = ({
           rounded-full
           text-xs
           transition-colors duration-200 font-semibold
-          ${size === "small" ? "text-xs" : size === "large" ? "text-lg" : "text-sm"}
+          ${
+            size === "small"
+              ? "text-xs"
+              : size === "large"
+              ? "text-lg"
+              : "text-sm"
+          }
           ${className}
-          ${shape === "rounded-sm" ? "rounded-sm" : shape === "rounded-full" ? "rounded-full" : "rounded-md"}
+          ${
+            shape === "rounded-sm"
+              ? "rounded-sm"
+              : shape === "rounded-full"
+              ? "rounded-full"
+              : "rounded-md"
+          }
         `}
       >
         {label}
