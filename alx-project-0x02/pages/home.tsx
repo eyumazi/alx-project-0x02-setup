@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 export const Home = () => {
   return (
     <div>
+      <Header />
       <Card
         title="Beautiful Apartment"
         location="New York, NY"
